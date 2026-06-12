@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeSync AI Coach</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-page">
+
+<div class="dashboard-layout">
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>LifeSync AI</h2>
+
+            <p>Personal Growth Companion</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/tasks">✅ Tasks</a></li>
+            <li><a href="/analytics">📊 Analytics</a></li>
+            <li><a href="/journal">📖 Journal</a></li>
+            <li><a href="/ai">🤖 AI Coach</a></li>
+            <li><a href="/settings">⚙ Settings</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="dashboard-content">
+
+        <div class="welcome-card">
+
+            <h1>🤖 LifeSync AI Coach</h1>
+
+            <p>
+                Welcome {{ user.name }},
+                your personal productivity and growth mentor.
+            </p>
+
+        </div>
+
+        <div class="prompt-grid">
+
+            <button class="prompt-btn">
+                💡 What skill should I learn today?
+            </button>
+
+            <button class="prompt-btn">
+                📚 Create a study plan
+            </button>
+
+            <button class="prompt-btn">
+                💪 Suggest a workout
+            </button>
+
+            <button class="prompt-btn">
+                😴 Improve my sleep
+            </button>
+
+            <button class="prompt-btn">
+                🎯 Help me achieve my goals
+            </button>
+
+            <button class="prompt-btn">
+                🔥 Motivate me
+            </button>
+
+        </div>
+
+        <div class="chat-container">
+
+            <div class="chat-header">
+
+                Gemini Powered AI Assistant
+
+            </div>
+
+            <div class="chat-window">
+
+                {% if user_question %}
+
+                <div class="user-bubble">
+
+                    {{ user_question }}
+
+                </div>
+
+                {% endif %}
+
+                {% if ai_response %}
+
+                <div class="ai-bubble">
+
+                    {{ ai_response }}
+
+                </div>
+
+                {% else %}
+
+                <div class="ai-bubble">
+
+                    👋 Hi {{ user.name }}!
+
+                    I'm your LifeSync AI Coach.
+
+                    Ask me anything about:
+
+                    • Productivity
+
+                    • Learning
+
+                    • Fitness
+
+                    • Habits
+
+                    • Motivation
+
+                    • Career Growth
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+            <form action="/ask_ai" method="POST">
+
+    <div class="chat-input-area">
+
+        <input
+        type="text"
+        name="question"
+        placeholder="Ask LifeSync AI anything..."
+        required>
+
+        <button type="submit">
+
+            Send
+
+        </button>
+
+    </div>
+
+</form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeSync AI Settings</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-page">
+
+<div class="dashboard-layout">
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>LifeSync AI</h2>
+
+            <p>Personal Growth Companion</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/tasks">✅ Tasks</a></li>
+            <li><a href="/analytics">📊 Analytics</a></li>
+            <li><a href="/journal">📖 Journal</a></li>
+            <li><a href="/ai">🤖 AI Coach</a></li>
+            <li><a href="/settings">⚙ Settings</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="dashboard-content">
+
+        <div class="welcome-card">
+
+            <h1>⚙ Profile Settings</h1>
+
+            <p>
+
+                Manage your LifeSync AI profile and preferences.
+
+            </p>
+
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="card profile-card">
+
+                <div class="profile-avatar">
+
+                    {{ user.name[0] }}
+
+                </div>
+
+                <h2>{{ user.name }}</h2>
+
+                <p>{{ user.occupation }}</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🎯 Main Goal</h2>
+
+                <h3>{{ user.goal }}</h3>
+
+                <p>
+
+                    Your primary growth focus.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card settings-card">
+
+            <h2>Profile Information</h2>
+
+            <br>
+
+            <label>Full Name</label>
+            <input type="text" value="{{ user.name }}" readonly>
+
+            <br>
+
+            <label>Age</label>
+            <input type="text" value="{{ user.age }}" readonly>
+
+            <br>
+
+            <label>Occupation</label>
+            <input type="text" value="{{ user.occupation }}" readonly>
+
+            <br>
+
+            <label>Main Goal</label>
+            <input type="text" value="{{ user.goal }}" readonly>
+
+            <br><br>
+
+            <button>
+
+                Edit Profile (Coming Soon)
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

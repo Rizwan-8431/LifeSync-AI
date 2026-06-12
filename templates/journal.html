@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeSync AI Journal</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-page">
+
+<div class="dashboard-layout">
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>LifeSync AI</h2>
+
+            <p>Personal Growth Companion</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/tasks">✅ Tasks</a></li>
+            <li><a href="/analytics">📊 Analytics</a></li>
+            <li><a href="/journal">📖 Journal</a></li>
+            <li><a href="/ai">🤖 AI Coach</a></li>
+            <li><a href="/settings">⚙ Settings</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="dashboard-content">
+
+        <div class="welcome-card">
+
+            <h1>📖 Reflection Journal</h1>
+
+            <p>
+
+                Reflect. Learn. Improve every day.
+
+            </p>
+
+        </div>
+
+        <!-- Reflection Questions -->
+
+        <div class="dashboard-grid">
+
+            <div class="card">
+
+                <h2>🌟 Best Moment Today</h2>
+
+                <textarea
+                rows="5"
+                placeholder="What was the best thing that happened today?"></textarea>
+
+            </div>
+
+            <div class="card">
+
+                <h2>📚 What Did You Learn?</h2>
+
+                <textarea
+                rows="5"
+                placeholder="Write your key learnings..."></textarea>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🚀 What Went Well?</h2>
+
+                <textarea
+                rows="5"
+                placeholder="What are you proud of today?"></textarea>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🎯 Tomorrow's Focus</h2>
+
+                <textarea
+                rows="5"
+                placeholder="What will you improve tomorrow?"></textarea>
+
+            </div>
+
+        </div>
+
+        <!-- Daily Reflection -->
+
+        <div class="card journal-main">
+
+            <h2>📝 Daily Reflection</h2>
+
+            <br>
+
+            <textarea
+            rows="12"
+            placeholder="Write anything about your day, thoughts, emotions, ideas or experiences..."></textarea>
+
+            <br><br>
+
+            <button>
+
+                Save Journal Entry
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

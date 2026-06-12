@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeSync AI - Setup</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-page">
+
+<div class="form-wrapper">
+
+<div class="form-container">
+
+```
+<div class="logo-section">
+
+    <h1>LifeSync AI</h1>
+
+    <p>
+        Let's personalize your journey.
+    </p>
+
+</div>
+
+<form action="/save_user" method="POST">
+
+    <input
+    type="text"
+    name="name"
+    placeholder="Full Name"
+    required>
+
+    <input
+    type="number"
+    name="age"
+    placeholder="Age"
+    required>
+
+    <select name="occupation" required>
+
+        <option value="">
+            Select Occupation
+        </option>
+
+        <option value="Student">
+            🎓 Student
+        </option>
+
+        <option value="Employee">
+            💼 Employee
+        </option>
+
+        <option value="Freelancer">
+            🧑‍💻 Freelancer
+        </option>
+
+        <option value="Business Owner">
+            🚀 Entrepreneur
+        </option>
+
+    </select>
+
+    <select name="goal" required>
+
+        <option value="">
+            Select Main Goal
+        </option>
+
+        <option value="Academic Excellence">
+            🎓 Academic Excellence
+        </option>
+
+        <option value="Career Growth">
+            💼 Career Growth
+        </option>
+
+        <option value="Fitness">
+            💪 Health & Fitness
+        </option>
+
+        <option value="Productivity">
+            📈 Productivity
+        </option>
+
+        <option value="Personal Growth">
+            🧠 Self Improvement
+        </option>
+
+    </select>
+
+    <button type="submit">
+
+        Continue
+
+    </button>
+
+</form>
+```
+
+</div>
+
+</div>
+
+</body>
+
+</html>

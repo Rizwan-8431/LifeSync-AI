@@ -1,0 +1,257 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeSync AI - Tasks</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-page">
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>LifeSync AI</h2>
+
+            <p>Personal Growth Companion</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/tasks">✅ Tasks</a></li>
+            <li><a href="/analytics">📊 Analytics</a></li>
+            <li><a href="/journal">📖 Journal</a></li>
+            <li><a href="/ai">🤖 AI Coach</a></li>
+            <li><a href="/settings">⚙ Settings</a></li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="dashboard-content">
+
+        <!-- Header -->
+
+        <div class="welcome-card">
+
+            <h1>✅ Task Manager</h1>
+
+            <p>
+                Stay organized. Stay productive.
+            </p>
+
+        </div>
+
+        <!-- Stats -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3>Total Tasks</h3>
+
+                <h2>{{ tasks|length }}</h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Completed</h3>
+
+                <h2>{{ completed_tasks }}</h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Pending</h3>
+
+                <h2>{{ pending_tasks }}</h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Progress</h3>
+
+                <h2>{{ progress }}%</h2>
+
+            </div>
+
+        </div>
+
+        <!-- Add Task -->
+
+        <div class="card">
+
+            <h2>Add New Task</h2>
+
+            <br>
+
+            <form action="/add_task" method="POST">
+
+                <input
+                    type="text"
+                    name="task"
+                    placeholder="What do you want to accomplish today?"
+                    required>
+
+                <br><br>
+
+                <button type="submit">
+
+                    ➕ Add Task
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <br>
+
+        <!-- Progress -->
+
+        <div class="card">
+
+            <h2>Task Progress</h2>
+
+            <br>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"></div>
+
+            </div>
+
+            <br>
+
+            <p>
+
+                {{ completed_tasks }}
+                out of
+                {{ tasks|length }}
+                tasks completed
+
+            </p>
+
+        </div>
+
+        <br>
+
+        <!-- Pending Tasks -->
+
+        <div class="card">
+
+            <h2>📌 Pending Tasks</h2>
+
+            <br>
+
+            {% if tasks %}
+
+                {% for task in tasks %}
+
+                    {% if task["completed"] == false %}
+
+                    <div class="modern-task">
+
+                        <div class="task-left">
+
+                            <a href="/complete_task/{{ loop.index0 }}">
+
+                                ⬜
+
+                            </a>
+
+                            <span>
+
+                                {{ task["task"] }}
+
+                            </span>
+
+                        </div>
+
+                        <a class="delete-btn"
+                           href="/delete_task/{{ loop.index0 }}">
+
+                            ✖
+
+                        </a>
+
+                    </div>
+
+                    {% endif %}
+
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+
+        <br>
+
+        <!-- Completed Tasks -->
+
+        <div class="card">
+
+            <h2>✅ Completed Tasks</h2>
+
+            <br>
+
+            {% if tasks %}
+
+                {% for task in tasks %}
+
+                    {% if task["completed"] == true %}
+
+                    <div class="modern-task completed-task">
+
+                        <div class="task-left">
+
+                            <a href="/complete_task/{{ loop.index0 }}">
+
+                                ✅
+
+                            </a>
+
+                            <span>
+
+                                {{ task["task"] }}
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

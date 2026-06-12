@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeSync AI Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="landing-page">
+
+<div class="dashboard-layout">
+
+```
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="sidebar-logo">
+
+        <h2>LifeSync AI</h2>
+
+        <p>Personal Growth Companion</p>
+
+    </div>
+
+    <ul>
+
+        <li><a href="/dashboard">🏠 Dashboard</a></li>
+
+        <li><a href="/tasks">✅ Tasks</a></li>
+
+        <li><a href="/analytics">📊 Analytics</a></li>
+
+        <li><a href="/journal">📖 Journal</a></li>
+
+        <li><a href="/ai">🤖 AI Coach</a></li>
+
+        <li><a href="/settings">⚙ Settings</a></li>
+
+    </ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="dashboard-content">
+
+    <!-- Hero Welcome -->
+
+    <div class="welcome-card">
+
+        <h1>Welcome Back, {{ user.name }} 👋</h1>
+
+        <p>{{ user.occupation }} • {{ user.goal }}</p>
+
+        <div class="quote">
+
+            "Success is the sum of small efforts repeated daily."
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <h3>Total Tasks</h3>
+
+            <h2>{{ tasks|length }}</h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Water Intake</h3>
+
+            <h2>0 L</h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Sleep</h3>
+
+            <h2>0 Hrs</h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Current Streak</h3>
+
+            <h2>0 Days</h2>
+
+        </div>
+
+    </div>
+
+    <!-- Main Section -->
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+
+            <h2>🎯 Main Goal</h2>
+
+            <p>
+
+                {{ user.goal }}
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🤖 AI Coach</h2>
+
+            <p>
+
+                Get personalized suggestions, plans and motivation.
+
+            </p>
+
+            <br>
+
+            <a href="/ai">
+                <button>Open AI Coach</button>
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📖 Reflection Journal</h2>
+
+            <p>
+
+                Record your learnings and thoughts every day.
+
+            </p>
+
+            <br>
+
+            <a href="/journal">
+                <button>Open Journal</button>
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📊 Analytics</h2>
+
+            <p>
+
+                Visualize your growth and productivity trends.
+
+            </p>
+
+            <br>
+
+            <a href="/analytics">
+                <button>View Analytics</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+</body>
+
+</html>
