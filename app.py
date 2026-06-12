@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import json
 import google.generativeai as genai
+import os
 app = Flask(__name__)
 
 genai.configure(api_key="AQ.Ab8RN6L25YYnrTofZNdEdsjSw4Vh0Yuk0BOURNShBIxUbjnHHw")
@@ -221,6 +222,5 @@ def delete_task(index):
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
-        port=5000,
-        debug=True
+        port=int(os.environ.get("PORT", 5000))
     )
